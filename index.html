@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="vi"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="thiết kế website, bán source code, share source code, Nguyễn Đăng Khoa, lập trình web">
+  <meta name="author" content="Nguyễn Đăng Khoa">
+  <title>Nguyễn Đăng Khoa - Thiết kế Website</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="avatar-frame">
+      <img src="images/avatar.jpg" alt="Ảnh đại diện của Nguyễn Đăng Khoa" class="avatar">
+      <img src="images/frame.png" alt="Khung viền ảnh đại diện" class="avatar-border">
+    </div>
+    
+    <div class="name">
+      Nguyễn Đăng Khoa
+      <img src="images/verified.png" alt="Huy hiệu xác minh" class="verified-badge">
+    </div>
+
+    <div class="info">
+      Thiết kế website theo yêu cầu<br>
+      Bán và share source code<br>
+      Cần source code? Inbox Zalo mình<br>
+      <button class="button" onclick="location.href='https://zalo.com'">
+        <i>Zalo: 0921079322</i>
+      </button>
+    </div>
+
+    <div class="button-container">
+      <button class="button" onclick="location.href='https://t.me/Toolsvip_dvmxh'">
+        <i class="fab fa-telegram"></i> Telegram
+      </button>
+      <button class="button" onclick="location.href='https://www.tiktok.com/@dangkhoa_coder'">
+        <i class="fab fa-tiktok"></i> TikTok
+      <button class="button" onclick="location.href='https://www.facebook.com/nguyen.ang.khoa.798421/'">
+        <i class="fab fa-facebook"></i> Facebook
+      </button>
+      <button class="button" onclick="location.href='https://github.com'">
+        <i class="fab fa-github"></i> GitHub [Kh Share]
+      <button class="button" onclick="location.href='https://dangkhoadev.netlify.app/'">
+        <i class="fa fa-qrcode"></i> Web DangKhoa_Dev     
+      </button>
+    </div>
+
+    <hr class="divider">
+
+    <div class="donate-section">
+      <h3>Ủng hộ mình qua QR Code</h3>
+      <img src="images/qr_ndk.jpg" alt="QR Code Donate" class="qr-code">
+      <p class="bank-info">
+        NGÂN HÀNG: BIDV<br>
+        STK: 8836023812<br>
+        TÊN: NGUYEN MINH TRI
+      </p>
+      <button class="button" id="download-qr-btn">
+        <i class="fas fa-download"></i> Tải xuống QR
+      </button>
+    </div>
+  </div>
+
+  <button class="music-btn" id="music-btn">
+    <i class="fas fa-play"></i>
+  </button>
+
+  <audio id="background-music" loop="">
+    <source src="media/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const musicBtn = document.getElementById('music-btn');
+    const music = document.getElementById('background-music');
+    const musicIcon = musicBtn.querySelector('i');
+
+    musicBtn.addEventListener('click', () => {
+      if (music.paused) {
+        music.play().catch(error => {
+          console.error('Lỗi phát nhạc:', error);
+        });
+        musicIcon.classList.replace('fa-play', 'fa-pause');
+      } else {
+        music.pause();
+        musicIcon.classList.replace('fa-pause', 'fa-play');
+      }
+    });
+
+    const downloadBtn = document.getElementById('download-qr-btn');
+
+    downloadBtn.addEventListener('click', () => {
+      const link = document.createElement('a');
+      link.href = 'https://i.postimg.cc/pVJbNVhk/qr-ndk.jpg';
+      link.download = 'https://i.postimg.cc/pVJbNVhk/qr-ndk.jpg';
+      link.click();
+    });
+  </script>
+
+
+</body></html>
